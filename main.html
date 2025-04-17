@@ -16,7 +16,12 @@
 
         body {
             overflow-x: hidden;
+            /* Static background for the entire website */
             background-color: #f5f7fa;
+            background-image: url('imh16.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
         }
 
         /* Animations */
@@ -50,17 +55,17 @@
             animation: slideIn 0.8s ease-out forwards;
         }
 
-        /* Header */
-        .header {
+        /* Navigation - Now moved to the top */
+        .nav {
+            background-color: #102542;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 5%;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
 
         .logo-container {
@@ -69,8 +74,7 @@
         }
 
         .logo {
-            width: 80px;
-            height: 80px;
+            color:#fff;
             border-radius: 10px;
             overflow: hidden;
             transition: transform 0.3s ease;
@@ -80,45 +84,10 @@
             transform: scale(1.1);
         }
 
-        .contact-info {
-            display: flex;
-            gap: 15px;
-            font-size: 14px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #333;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 12px;
-        }
-
-        .social-icon {
-            width: 35px;
-            height: 35px;
-            background-color: #102542;
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .social-icon:hover {
-            background-color: #2A9D8F;
-            transform: translateY(-3px);
-        }
-
-        /* Navigation */
-        .nav {
-            background-color: #102542;
-            padding: 15px 0;
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .nav-items {
@@ -139,13 +108,36 @@
             color: #2A9D8F;
         }
 
+        .social-icons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-icon {
+            width: 35px;
+            height: 35px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: #2A9D8F;
+            transform: translateY(-3px);
+        }
+
         .tagline {
             text-align: center;
             padding: 20px 0;
             font-style: italic;
-            color: #555;
+            color: #fff;
             font-size: 18px;
-            background-color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
         }
 
         /* Hero Section */
@@ -158,31 +150,14 @@
             align-items: center;
         }
 
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .hero-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .hero-section:hover .hero-bg img {
-            transform: scale(1.05);
-        }
-
         .hero-content {
             max-width: 600px;
-            padding: 0 5%;
+            padding: 40px 5%;
             color: #fff;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            margin-left: 5%;
         }
 
         .hero-title {
@@ -202,7 +177,10 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
             padding: 60px 5%;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            margin: 30px 5%;
+            border-radius: 15px;
         }
 
         .feature {
@@ -263,8 +241,12 @@
         .pillar-section {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 10px;
+            gap: 20px;
             padding: 60px 5%;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            margin: 30px 5%;
+            border-radius: 15px;
         }
 
         .pillar {
@@ -273,6 +255,7 @@
             border-radius: 15px;
             overflow: hidden;
             transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .pillar:hover {
@@ -322,73 +305,58 @@
 
         /* Video Section */
         .video-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
             padding: 60px 5%;
-            background-color: #f5f7fa;
+            
+           
+            margin: 30px 5%;
+            border-radius: 15px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .video {
             position: relative;
-            height: 200px;
+            width: 400px;
             border-radius: 15px;
             overflow: hidden;
             transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
         }
 
         .video:hover {
             transform: translateY(-5px);
         }
 
-        .video img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .video-label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #102542;
         }
 
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60px;
-            height: 60px;
-            background-color: #2A9D8F;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .share-btn {
+            margin-top: 5px;
+            padding: 5px 10px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
-        .play-button:hover {
-            background-color: #1A7A8B;
-        }
-
-        .play-button i {
-            color: #fff;
-            font-size: 1.5rem;
-        }
-
-        .video-label {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background-color: rgba(255,255,255,0.9);
-            padding: 8px 15px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: #102542;
+        .share-btn:hover {
+            background-color: #0056b3;
         }
 
         /* Footer */
         .footer {
-            background-color: #102542;
+            background-color: rgba(16, 37, 66, 0.9);
             color: #fff;
             padding: 60px 5% 30px;
+            margin-top: 30px;
         }
 
         .footer-content {
@@ -408,6 +376,16 @@
             font-size: 0.9rem;
             line-height: 1.6;
             margin-bottom: 15px;
+        }
+
+        .footer-contact a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: #2A9D8F;
         }
 
         .footer-links-title {
@@ -431,26 +409,22 @@
         .copyright {
             text-align: center;
             padding: 20px 0;
-            background-color: #081B33;
+            background-color: rgba(8, 27, 51, 0.9);
             color: #fff;
             font-size: 0.8rem;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .header {
+            .nav {
                 flex-direction: column;
                 gap: 15px;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                text-align: center;
             }
 
             .nav-items {
                 flex-direction: column;
                 gap: 15px;
+                align-items: center;
             }
 
             .hero-title {
@@ -465,8 +439,14 @@
                 height: 60vh;
             }
 
-            .feature, .pillar, .video {
-                margin-bottom: 20px;
+            .video-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .video {
+                width: 100%;
+                max-width: 400px;
             }
         }
 
@@ -490,35 +470,20 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <div class="header">
+    <!-- Navigation - Now at the top -->
+    <div class="nav">
         <div class="logo-container">
             <div class="logo">
-                <img src="https://picsum.photos/80/80?random=1" alt="Learning Expedition Logo" />
+                <h2> Learning Expedition</h2>
             </div>
         </div>
-        <div class="contact-info">
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <a href="mailto:connect@learningexpedition.in">connect@learningexpedition.in</a>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <a href="tel:+917829978297">+91 78299 78297</a>
-            </div>
+        <div class="nav-items">
+            <a href="#video-section" class="nav-item">Who We Are</a>
+            <a href="#footer" class="nav-item">Contact Us</a>
         </div>
         <div class="social-icons">
             <a href="https://www.youtube.com/@learningexpedition5823" class="social-icon"><i class="fab fa-youtube"></i></a>
             <a href="https://www.instagram.com/learning_expedition/" class="social-icon"><i class="fab fa-instagram"></i></a>
-        </div>
-    </div>
-
-    <!-- Navigation -->
-    <div class="nav">
-        <div class="nav-items">
-            <a href="#" class="nav-item">Who We Are</a>
-            <a href="#" class="nav-item">Our Offerings</a>
-            <a href="#" class="nav-item">Contact Us</a>
         </div>
     </div>
 
@@ -527,9 +492,6 @@
 
     <!-- Hero Section 1 -->
     <div class="hero-section animate-in">
-        <div class="hero-bg">
-            <img src="imh16.jpg" alt="Children engaged in hands-on learning" />
-        </div>
         <div class="hero-content">
             <h1 class="hero-title">Making Learning Fun, Hands-On & Impactful</h1>
             <p class="hero-subtitle">An ecosystem of live experiences, experts, and educators creating transformative learning journeys.</p>
@@ -560,9 +522,6 @@
 
     <!-- Hero Section 2 -->
     <div class="hero-section animate-in">
-        <div class="hero-bg">
-            <img src="culture.jpg" alt="Children exploring nature" />
-        </div>
         <div class="hero-content">
             <h1 class="hero-title">Welcome to the New Age of Learning</h1>
             <p class="hero-subtitle">Where your interests meet experts in natural learning environments.</p>
@@ -572,7 +531,7 @@
     <!-- Pillars Section -->
     <div class="pillar-section">
         <div class="pillar animate-in">
-            <img src="img11.jpg" alt="Cultural arts and crafts" />
+            <img src="img12.jpg" alt="Cultural arts and crafts" />
             <div class="pillar-overlay">
                 <h3 class="pillar-title">Integrated</h3>
                 <div class="pillar-divider"></div>
@@ -580,7 +539,7 @@
             </div>
         </div>
         <div class="pillar animate-in">
-            <img src="img12.jpg" alt="Expert-led outdoor learning" />
+            <img src="img13.jpg" alt="Expert-led outdoor learning" />
             <div class="pillar-overlay">
                 <h3 class="pillar-title">Expert-Led</h3>
                 <div class="pillar-divider"></div>
@@ -588,7 +547,7 @@
             </div>
         </div>
         <div class="pillar animate-in">
-            <img src="imh16.jpg" alt="Hands-on science experiments" />
+            <img src="img14.jpg" alt="Hands-on science experiments" />
             <div class="pillar-overlay">
                 <h3 class="pillar-title">Experiential</h3>
                 <div class="pillar-divider"></div>
@@ -596,7 +555,7 @@
             </div>
         </div>
         <div class="pillar animate-in">
-            <img src="explore.jpg" alt="Collaborative learning community" />
+            <img src="img15.jpg" alt="Collaborative learning community" />
             <div class="pillar-overlay">
                 <h3 class="pillar-title">Community</h3>
                 <div class="pillar-divider"></div>
@@ -605,57 +564,38 @@
         </div>
     </div>
 
-    
-   <!-- Video Section -->
-<div class="video-section" style="display: flex; gap: 20px; flex-wrap: wrap;">
-    
-    <!-- Video 1 -->
-    <div class="video animate-in" style="position: relative; width: 400px;">
-        <iframe width="400" height="225" src="https://www.youtube.com/embed/u4qLs7gq3u0" 
-            title="Learning Expedition Video 1" frameborder="0" allowfullscreen></iframe>
-        <div class="video-label" style="margin-top: 10px; font-weight: bold;">LEARNING EXPEDITION | PRANI</div>
-        <button onclick="shareVideo('https://youtu.be/u4qLs7gq3u0')" 
-            style="margin-top: 5px; padding: 5px 10px; background: #007bff; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
-            Share
-        </button>
+    <!-- Video Section -->
+    <div id="video-section" class="video-section">
+        <!-- Video 1 -->
+        <div class="video animate-in">
+            <iframe width="400" height="225" src="https://www.youtube.com/embed/u4qLs7gq3u0" 
+                title="Learning Expedition Video 1" frameborder="0" allowfullscreen></iframe>
+            <div class="video-label">LEARNING EXPEDITION | PRANI</div>
+            <button onclick="shareVideo('https://youtu.be/u4qLs7gq3u0')" class="share-btn">
+                Share
+            </button>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video animate-in">
+            <iframe width="400" height="225" src="https://www.youtube.com/embed/C-z5zcMGU_Q" 
+                title="Learning Expedition - Village Experience" frameborder="0" allowfullscreen></iframe>
+            <div class="video-label">LEARNING EXPEDITION - VILLAGE EXPERIENCE</div>
+            <button onclick="shareVideo('https://youtu.be/C-z5zcMGU_Q')" class="share-btn">
+                Share
+            </button>
+        </div>
     </div>
-
-    <!-- Video 2 -->
-    <div class="video animate-in" style="position: relative; width: 400px;">
-        <iframe width="400" height="225" src="https://www.youtube.com/embed/C-z5zcMGU_Q" 
-            title="Learning Expedition - Village Experience" frameborder="0" allowfullscreen></iframe>
-        <div class="video-label" style="margin-top: 10px; font-weight: bold;">LEARNING EXPEDITION - VILLAGE EXPERIENCE</div>
-        <button onclick="shareVideo('https://youtu.be/C-z5zcMGU_Q')" 
-            style="margin-top: 5px; padding: 5px 10px; background: #007bff; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
-            Share
-        </button>
-    </div>
-
-</div>
-
-<script>
-    function shareVideo(url) {
-        if (navigator.share) {
-            navigator.share({
-                title: 'Check out this video!',
-                url: url
-            }).catch(console.error);
-        } else {
-            prompt("Copy and share this link:", url);
-        }
-    }
-</script>
-
 
     <!-- Footer -->
-    <div class="footer">
+    <div id="footer" class="footer">
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="https://picsum.photos/80/80?random=10" alt="Learning Expedition Logo" />
+                
                 <div class="footer-address">
-                    9/15, 1st Floor, Rupa Arcade,<br>
-                    Mathikere Main Road,<br>
-                    Bengaluru - 560064
+                    123/1, 1st Cross, RT Nagar, <br>
+                     Sultanpalya, Kaval Bairasandra,<br>
+                      Bengaluru, Karnataka 560032 <br>
                 </div>
                 <div class="footer-contact">
                     <i class="fas fa-envelope"></i>
@@ -667,20 +607,30 @@
                 </div>
             </div>
             <div class="footer-links">
-               
-                
                 <a href="#" class="footer-link">Contact Us</a>
                 <a href="#" class="footer-link">Terms and Conditions</a>
                 <div class="social-icons">
-                   
                     <a href="https://www.youtube.com/@learningexpedition5823" class="social-icon"><i class="fab fa-youtube"></i></a>
                     <a href="https://www.instagram.com/learning_expedition/" class="social-icon"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
         <div class="copyright">
-            Copyright © 2011 Learning Expedition
+            Copyright © 2025 Learning Expedition
         </div>
     </div>
+
+    <script>
+        function shareVideo(url) {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Check out this video!',
+                    url: url
+                }).catch(console.error);
+            } else {
+                prompt("Copy and share this link:", url);
+            }
+        }
+    </script>
 </body>
 </html>
